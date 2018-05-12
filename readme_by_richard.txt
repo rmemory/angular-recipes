@@ -122,6 +122,62 @@ The shopping list contains the shopping list edit
   </div>
 </div>
 
+Kinds of databinding
+====================
 
+(1) Those kinds of databinding that are used within the same
+component.
+
+(a) string interpolation
+
+The HTML template is able to access any public variables or
+functions found within the components type script file. The
+HTML template accesses it like this:
+
+{{ theVarName }}
+
+Whatever is between the curly braces must resolve to a string.
+The string is inline-block, like a span. It could event be a
+method in the TypeScript file.
+
+(b) Property binding
+
+When we put square brackets around any HTML attribute and put
+an equals sign after it, whatever follows in the quotes is
+treated as TypeScript. For example, we can cause the disabled
+attribute of a button to be enabled or disabled depening on a
+variable (or function) in the TypeScript file.
+
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer">
+    Add Server
+</button>
+
+(c) Two way databinding
+
+(d) Events within the same component
+
+(2) Directives
+
+ngIf
+
+ngFor
+
+ngStyle
+
+ngClass
+
+(3) Databinding for communication between components
+
+@Input
+
+@Output
+
+(4) Gaining access to HTML elements
+
+local ref
+
+view child
 
 
