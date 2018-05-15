@@ -9,7 +9,7 @@ import { Ingredient } from '../../shared/ingredient.model';
 export class ShoppingEditComponent implements OnInit {
   @ViewChild('nameInput') nameInputRef: ElementRef;
   @ViewChild('amountInput') amountInputRef: ElementRef;
-  @Output() ingredientAdded = new EventEmitter<{name: string, amount: number}>();
+  @Output() ingredientAdded = new EventEmitter<Ingredient>();
 
   constructor() { }
 
@@ -17,9 +17,9 @@ export class ShoppingEditComponent implements OnInit {
   }
 
   onAddItem() {
-    const newIngredient = new Ingredient(
-                                         this.nameInputRef.nativeElement.value,
-                                         this.amountInputRef.nativeElement.value);
+    const ingName = this.nameInputRef.nativeElement.value;
+    const ingAmount = this.amountInputRef.nativeElement.value;
+    const newIngredient = new Ingredient(ingName, ingAmount);
     this.ingredientAdded.emit(newIngredient);
   }
 

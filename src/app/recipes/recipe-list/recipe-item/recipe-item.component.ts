@@ -7,7 +7,7 @@ import { Recipe } from "../../model/recipe.model";
   styleUrls: ['./recipe-item.component.css']
 })
 export class RecipeItemComponent implements OnInit {
-  @Input('recipe') recipe: Recipe;
+  @Input() recipe: Recipe;
   @Output() recipeSelected = new EventEmitter<void>();
 
   constructor() { }
