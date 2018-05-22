@@ -1,7 +1,9 @@
-<!-- Loop over recipes in component -->
-<a href="#"
-  class="list-group-item clearfix"
-  (click) = "onRecipeSelected()">
+<!-- Loop over recipes in component,
+     Removed the href from the anchor because it causes the recipe component to be reloaded each time -->
+<a style="cursor: pointer"
+  [routerLink]="[recipeIndex]"
+  routerLinkActive="active"
+  class="list-group-item clearfix">
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
     <p class="list-group-item-text">{{ recipe.description }}</p>
